@@ -235,7 +235,7 @@ namespace Workforce.Controllers {
 
         [HttpPost, ActionName ("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed (int id) {
+        public async Task<IActionResult> DeleteConfirm (int id) {
 
             string sql = $@"DELETE FROM Student WHERE Id = {id}";
 

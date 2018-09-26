@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Workforce.Models.Instructor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlackHandle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CohortId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var instructor in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.SlackHandle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.Specialty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => instructor.CohortId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@instructor.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@instructor.Id">Details</a> |
+                <a asp-action="DeleteConfirm" asp-route-id="@instructor.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
